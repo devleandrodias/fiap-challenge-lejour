@@ -25,7 +25,7 @@ export const WeedingCountChart: React.FC = () => {
     let yearList: any[] = [];
 
     for (let i in data) {
-      if (data[i]["WEDDING_DATE"] !== "NULL") {
+      if (data[i]["WEDDING_DATE"] !== "NULL" && data[i]["BUDGET"] !== "NULL") {
         let style = data[i]["STYLE"];
         let year = data[i]["WEDDING_DATE"].substring(0, 4);
 
