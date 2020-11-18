@@ -9,8 +9,8 @@ export const MenuHeader: React.FC = () => {
         <Link to="/chart/weeding-types">Orçamento médio</Link>
         <Link to="/chart/weeding-count">Casamentos por ano</Link>
         <Link to="/chart/weeding-month">Casamentos por mês</Link>
-        <Link to="/chart/weeding-month">Custo por número de convidados</Link>
-        <Link to="/chart/weeding-month">Receita Anual de Fornecedores</Link>
+        <Link to="/chart/guests-by-budget">Convidados por Orçamento</Link>
+        <Link to="/chart/invoice-amount">Montante anual de fornecedores</Link>
       </div>
     </Fragment>
   );
