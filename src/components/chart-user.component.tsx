@@ -4,10 +4,12 @@ import React, { useCallback, useEffect, useState } from "react";
 
 import { getUsers } from "../services";
 import { colorList } from "../shared/color-list";
+import { Loading } from "./loading.component";
 
 export const ChartUser = () => {
   const loadData = useCallback(async () => {
     setData(await getUsers());
+    setLoading(false);
   }, []);
 
   useEffect(() => {
@@ -15,6 +17,7 @@ export const ChartUser = () => {
   }, [loadData]);
 
   const [data, setData] = useState();
+  const [loading, setLoading] = useState(true);
 
   const createuserRegisterData = (data: any) => {
     let dataSeries: any[] = [];
@@ -84,5 +87,9 @@ export const ChartUser = () => {
     ],
   };
 
-  return <HighchartsReact highcharts={Highcharts} options={options} />;
+  return loading ? (
+    <Loading />
+  ) : (
+    <HighchartsReact highcharts={Highcharts} options={options} />
+  );
 };

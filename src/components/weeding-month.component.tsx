@@ -4,10 +4,12 @@ import React, { useCallback, useEffect, useState } from "react";
 
 import { getWedding } from "../services";
 import { colorList } from "../shared/color-list";
+import { Loading } from "./loading.component";
 
 export const WeddingMonthChart: React.FC = () => {
   const loadData = useCallback(async () => {
     setData(await getWedding());
+    setLoading(false);
   }, []);
 
   useEffect(() => {
@@ -15,6 +17,7 @@ export const WeddingMonthChart: React.FC = () => {
   }, [loadData]);
 
   const [data, setData] = useState();
+  const [loading, setLoading] = useState(true);
 
   const createWeddingCountData = (data: any) => {
     let dataSeries: any[] = [];
@@ -114,5 +117,9 @@ export const WeddingMonthChart: React.FC = () => {
     series: dataSeries[1],
   };
 
-  return <HighchartsReact highcharts={Highcharts} options={options} />;
+  return loading ? (
+    <Loading />
+  ) : (
+    <HighchartsReact highcharts={Highcharts} options={options} />
+  );
 };
