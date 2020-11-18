@@ -41,7 +41,7 @@ export const WeedingCountChart: React.FC = () => {
           calcSource[style][year] = 0;
         }
 
-        calcSource[style][year]++;
+        calcSource[style][year] += data[i]["BUDGET"];
       }
     }
 
@@ -75,7 +75,7 @@ export const WeedingCountChart: React.FC = () => {
       type: "column",
     },
     title: {
-      text: "Casamentos por ano",
+      text: "Orçamento anual",
     },
     xAxis: {
       categories: dataSeries[0],
@@ -83,7 +83,7 @@ export const WeedingCountChart: React.FC = () => {
     yAxis: {
       min: 0,
       title: {
-        text: "Total de casamentos realizados",
+        text: "Somatória do orçamento",
       },
       stackLabels: {
         enabled: true,
@@ -106,7 +106,8 @@ export const WeedingCountChart: React.FC = () => {
     },
     tooltip: {
       headerFormat: "<b>{point.x}</b><br/>",
-      pointFormat: "{series.name}: {point.y}<br/>Total: {point.stackTotal}",
+      // eslint-disable-next-line
+      pointFormat: "{series.name}: {point.y}<br/>Valor: R${point.stackTotal}",
     },
     plotOptions: {
       column: {

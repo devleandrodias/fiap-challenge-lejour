@@ -53,14 +53,13 @@ export const WeedingTypesChart: React.FC = () => {
       type: "pie",
     },
     title: {
-      text: "Orçamento médio e quantidade por estilo de casamento",
+      text: "Quantidade de casamentos realizados por tipo",
     },
     tooltip: {
       headerFormat: "",
       pointFormat:
         '<span style="color:{point.color}">\u25CF</span> <b> {point.name}</b><br/>' +
-        "Número de casamentos realizados: <b>{point.y}</b><br/>" +
-        "Orçamento médio: <b>{point.z}</b><br/>",
+        "Número de casamentos realizados: <b>{point.y}</b><br/>",
     },
     series: [
       {
