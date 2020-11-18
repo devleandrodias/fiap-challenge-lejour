@@ -1,14 +1,18 @@
-import React, { Fragment, useEffect } from "react";
-import { InvoiceChart } from "../components/invoice.component";
-import { WeddingChart } from "../components/wedding.component";
+import React, { Fragment } from "react";
+import { ChartUser } from "../components/chart-user.component";
+import { WeedingCountChart } from "../components/wedding-count.component";
+import { WeddingMonthChart } from "../components/weeding-month.component";
+import { WeedingTypesChart } from "../components/weeding-types.component";
+// import { WeedingTypesChart } from "../components/weeding-types.component";
 
 export const Dashboard = () => {
-  useEffect(() => {}, []);
-
   return (
     <Fragment>
-      <InvoiceChart />
-      <WeddingChart />
+      <ChartUser />
+      {/* <WeedingTypesChart /> */}
+      <WeedingTypesChart />
+      <WeedingCountChart />
+      <WeddingMonthChart />
     </Fragment>
   );
 };
