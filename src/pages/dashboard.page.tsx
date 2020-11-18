@@ -9,9 +9,9 @@ import { WeedingTypesChart } from "../components/weeding-types.component";
 export const Dashboard = () => {
   return (
     <Fragment>
-      <MenuHeader />
-      <div className="container">
-        <BrowserRouter>
+      <BrowserRouter>
+        <MenuHeader />
+        <div className="container">
           <Route exact path="/chart/user" component={ChartUser} />
           <Route
             exact
@@ -28,8 +28,8 @@ export const Dashboard = () => {
             path="/chart/weeding-month"
             component={WeddingMonthChart}
           />
-        </BrowserRouter>
-      </div>
+        </div>
+      </BrowserRouter>
     </Fragment>
   );
 };

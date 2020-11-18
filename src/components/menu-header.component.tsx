@@ -1,15 +1,16 @@
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 
 export const MenuHeader: React.FC = () => {
   return (
     <Fragment>
       <div className="header">
-        <a href="/chart/user">Usuários por mês</a>
-        <a href="/chart/weeding-types">Orçamento médio</a>
-        <a href="/chart/weeding-count">Casamentos por ano</a>
-        <a href="/chart/weeding-month">Casamentos por mês</a>
-        <a href="/chart/weeding-month">Custo por número de convidados</a>
-        <a href="/chart/weeding-month">Receita Anual de Fornecedores</a>
+        <Link to="/chart/user">Usuários por mês</Link>
+        <Link to="/chart/weeding-types">Orçamento médio</Link>
+        <Link to="/chart/weeding-count">Casamentos por ano</Link>
+        <Link to="/chart/weeding-month">Casamentos por mês</Link>
+        <Link to="/chart/weeding-month">Custo por número de convidados</Link>
+        <Link to="/chart/weeding-month">Receita Anual de Fornecedores</Link>
       </div>
     </Fragment>
   );
